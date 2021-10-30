@@ -49,4 +49,4 @@ The minimum system would need only three components besides the PCB:
 2. A DB25 connector (~$1)
 3. An electrolytic capacitor 100uF 25V (~$0.25)
 
-[[/images/InUse.jpg|Gecko Blaster Installed on Geckodrive]
+![Gecko Blaster Installed on Geckodrive](/images/InUse.jpg)
