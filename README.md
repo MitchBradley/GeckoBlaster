@@ -50,3 +50,9 @@ The minimum system would need only three components besides the PCB:
 3. An electrolytic capacitor 100uF 25V (~$0.25)
 
 ![Gecko Blaster Installed on Geckodrive](/images/InUse.jpg)
+
+### Modifications
+
+1. Some Mini ESP32 modules do not have enough capacitance on the power rails, and the power dips when the WiFi radio turns on, leading to brownout resets.  The solution is to add extra capacitors on 5V and 3V3.  47uF is probably enough; I used larger ones just because I had them handy.
+2. A GeckoDrive G540 puts enough load on Z_DIR / GPIO0 to prevent the ESP32 from booting.  The solution is to cut the trace from IO0 to DB25 pin 7 and run a wire from GPIO14 to DB25 pin 7, thus repurposing the SW2 input.
+3. A Leadshine MX3660 pulls up Y_DIR / GPIO12 and prevents the ESP32 from booting.  The solution is to cut the traces from GPIO12 to DB25 pin 5, and from TDO/GPIO14 to DB25 pin 1 and run a wire from GPIO14 to DB25 pin 5, thus changing GPIO14/OUTPUT2 to be Y_DIR.
